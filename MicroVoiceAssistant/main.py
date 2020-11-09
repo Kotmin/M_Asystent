@@ -12,7 +12,7 @@ engine.setProperty('voice',engine.getProperty('voices')[0].id)
 
 
 #wczytać chrome
-chrome ='C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
+chrome = 'C:\"Program Files (x86)"\Google\Chrome\Application\chrome.exe'
 
 def speak(text):
     engine.say(text)
@@ -51,7 +51,7 @@ while True:
                 speak("Żegnaj.")
                 break
             elif len(czy_zawiera(cur,SZUKAJ)):
-                linczek=cur.lower().split('' + czy_zawiera(cur,SZUKAJ)[0] + '')[1]
+                linczek=cur.lower().split(' ' + czy_zawiera(cur,SZUKAJ)[0] + '')[1]
                 speak("Oto co udało mi się znaleźć.")
-                url="https://www.google.com/search?q=" + linczek.replace("","+").replace("?","%3F")
-                os.system(chrome+ "" + url)
+                url="https://www.google.com/search?q=" + linczek.replace(" ","+").replace("?","%3F")
+                os.system(chrome+ " " + url)
