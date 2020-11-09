@@ -1,6 +1,9 @@
 import speech_recognition as sr
 import pyttsx3 as tts
-import os,sys,time
+import os, sys ,time
+
+#Wgrać jakiś polski sensowny głos i poprawić ścieżkę
+
 
 #Obiekty
 r=sr.Recognizer()
@@ -34,15 +37,16 @@ def czy_zawiera(string, slowa):
 
 
 WYKRYJ=['bot','robot','robocie']
-DOWIDZENIA=['do widzenia','papa','żegnaj']
+DOWIDZENIA=['do widzenia','papa','żegnaj','dowidzenia']
 SZUKAJ =['wyszukaj','szukaj','znajdź','google','googluj','pokaż']
-print("Aby wyjść powiedz \" Do widzenia\"")
+print("Aby wyjść powiedz \"Do widzenia\"")
 while True:
     time.sleep(0.5)
-    cur =getText
+    cur =getText()
+    print(cur)
     print(""*50, end="\r")
     if cur !=None:
-        if len(czy_zawiera(cur,WYKRYJ)):
+        if len(czy_zawiera(cur, WYKRYJ)):
             if len(czy_zawiera(cur,DOWIDZENIA)):
                 speak("Żegnaj.")
                 break
