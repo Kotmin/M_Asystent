@@ -1,8 +1,12 @@
 import speech_recognition as sr
 import pyttsx3 as tts
-import os, sys ,time
+import os, sys ,time,keyboard
 
 #Wgrać jakiś polski sensowny głos i poprawić ścieżkę
+#Ogarnąłem mniej wiecej jak to uczynić żeby ścieżka grała, jeszcze ten głos
+#i podstawy mamy z głowy
+
+#
 
 
 #Obiekty
@@ -55,3 +59,4 @@ while True:
                 speak("Oto co udało mi się znaleźć.")
                 url="https://www.google.com/search?q=" + linczek.replace(" ","+").replace("?","%3F")
                 os.system(chrome+ " " + url)
+                keyboard.press_and_release('ctrl+w')
